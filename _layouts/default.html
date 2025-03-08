@@ -1,12 +1,49 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en" class="scroll-smooth">
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico" />
+    
+    <!-- Original Theme CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.min.css" />
+    
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tailwind.css" />
+    
+    <!-- Custom CSS - load last to override -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/custom.css" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Fancybox Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    
+    <!-- Additional header elements -->
     {% include header.html %}
 </head>
-<body>
-
+<body class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
+    
     {{ content }}
     
     {% include footer.html %}
+    
+    <!-- JavaScript files -->
+    <script src="{{ site.baseurl }}/assets/js/fade_in.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/menu.js"></script>
 </body>
 </html>

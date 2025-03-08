@@ -1,0 +1,42 @@
+/* Custom Fonts */
+.font-nothingyoucoulddo {
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+.font-signika {
+  font-family: 'Signika', sans-serif;
+}
+
+/* Custom Animations */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-8deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(10deg); }
+}
+
+.animate-wave {
+  animation: wave 1.5s infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Custom Utilities */
+.tap-highlight-transparent {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.smooth-edges {
+  border-radius: 2px;
+} 

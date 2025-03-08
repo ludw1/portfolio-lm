@@ -4,10 +4,18 @@
 <!--[if lte IE 8]>
 <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 <link rel="stylesheet" href="assets/css/main.min.css"/>
+<link rel="stylesheet" href="assets/css/custom.css"/>
 <!--[if lte IE 9]>
 <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
 <!--[if lte IE 8]>
 <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+<!-- Start - Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Signika:wght@400;700&display=swap" rel="stylesheet">
+<!-- End - Fonts -->
+<!-- Alpine.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 {% if site.google_analytics %}
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -18,3 +26,85 @@
   gtag('config', '{{ site.google_analytics }}');
 </script>
 {% endif %}
+
+<style>
+  /* Reset any default styles */
+  .nav-item a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    outline: none !important;
+  }
+  
+  /* Custom nav styling */
+  .custom-nav {
+    display: flex;
+    padding: 1rem 0;
+    width: 100%;
+  }
+  
+  .custom-nav-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: 'Signika', sans-serif;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  .custom-nav-list {
+    display: flex;
+    margin-left: auto;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .custom-nav-item {
+    margin-left: 2rem;
+    position: relative;
+  }
+  
+  .custom-nav-link {
+    font-family: 'Signika', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .custom-nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #666;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .custom-nav-link:hover::after {
+    transform: scaleX(1);
+  }
+</style>
+
+<!-- Custom navbar with hover effect -->
+<header class="custom-nav">
+  <a href="{{ site.baseurl }}/" class="custom-nav-brand">{{ site.header.title }}</a>
+  <ul class="custom-nav-list">
+    <li class="custom-nav-item">
+      <a href="{{ site.baseurl }}/" class="custom-nav-link">PORTFOLIO</a>
+    </li>
+    <li class="custom-nav-item">
+      <a href="{{ site.baseurl }}/about.html" class="custom-nav-link">ABOUT</a>
+    </li>
+    <li class="custom-nav-item">
+      <a href="{{ site.baseurl }}/contact.html" class="custom-nav-link">CONTACT</a>
+    </li>
+  </ul>
+</header>
+
+<!-- Scripts for menu and fade animations -->
+<script src="assets/js/menu.js"></script>
+<script src="assets/js/fade_in.js"></script> 
