@@ -40,6 +40,8 @@
     display: flex;
     padding: 1rem 0;
     width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
   }
   
   .custom-nav-brand {
@@ -87,11 +89,121 @@
   .custom-nav-link:hover::after {
     transform: scaleX(1);
   }
+
+  /* Mobile menu button */
+  .mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    margin-left: auto;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  /* Hamburger icon lines with rounded ends */
+  .mobile-menu-icon,
+  .mobile-menu-icon::before,
+  .mobile-menu-icon::after {
+    width: 24px;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.3s ease-in-out;
+    border-radius: 1px;
+  }
+
+  .mobile-menu-icon {
+    position: relative;
+  }
+
+  .mobile-menu-icon::before,
+  .mobile-menu-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .mobile-menu-icon::before {
+    top: -8px;
+  }
+
+  .mobile-menu-icon::after {
+    bottom: -8px;
+  }
+
+  /* Hover effect: extend the middle line */
+  .mobile-menu-button:hover .mobile-menu-icon {
+    transform: scaleX(1.2);
+  }
+
+  /* Focus style for accessibility */
+  .mobile-menu-button:focus {
+    box-shadow: 0 0 0 2px #666;
+  }
+
+  /* Mobile menu open state */
+  .mobile-menu-button.open .mobile-menu-icon {
+    background-color: transparent;
+  }
+
+  .mobile-menu-button.open .mobile-menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-button.open .mobile-menu-icon::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Add hover effect */
+  @media (hover: hover) {
+    .mobile-menu-button:hover .mobile-menu-icon,
+    .mobile-menu-button:hover .mobile-menu-icon::before,
+    .mobile-menu-button:hover .mobile-menu-icon::after {
+      background-color: #666;
+    }
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .mobile-menu-button {
+      display: block;
+    }
+
+    .custom-nav-list {
+      display: none;
+      width: 100%;
+      margin: 1rem 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .custom-nav-list.open {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .custom-nav-item {
+      margin: 0.5rem 0;
+    }
+  }
 </style>
 
 <!-- Custom navbar with hover effect -->
 <header class="custom-nav">
   <a href="{{ site.baseurl }}/" class="custom-nav-brand">{{ site.header.title }}</a>
+  <button class="mobile-menu-button" aria-label="Toggle menu">
+    <span class="mobile-menu-icon"></span>
+  </button>
   <ul class="custom-nav-list">
     <li class="custom-nav-item">
       <a href="{{ site.baseurl }}/" class="custom-nav-link">PORTFOLIO</a>
@@ -106,4 +218,15 @@
 </header>
 
 <!-- Scripts for fade animations -->
-<script src="assets/js/fade_in.js"></script> 
+<script src="assets/js/fade_in.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.mobile-menu-button');
+    const menuList = document.querySelector('.custom-nav-list');
+
+    menuButton.addEventListener('click', function() {
+      menuButton.classList.toggle('open');
+      menuList.classList.toggle('open');
+    });
+  });
+</script> 
