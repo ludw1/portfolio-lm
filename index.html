@@ -12,10 +12,10 @@ layout: default
         {% if image.path contains 'fulls' %}
         <div class="w-full md:w-1/2 lg:w-1/3 p-1">
           <div class="overflow-hidden h-full w-full">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" data-fancybox="gallery">
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" data-fancybox="gallery" data-image-name="{{ image.name }}">
               <img alt="{{ image.name }}"
                 class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
-                src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" data-name="{{ image.name }}" />
+                src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" />
             </a>
           </div>
         </div>

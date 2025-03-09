@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="baseurl" content="{{ site.baseurl }}" />
     <title>{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
     
@@ -33,10 +34,16 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
+    <!-- Custom Fancybox initialization -->
+    <script src="{{ site.baseurl }}/assets/js/fancybox-init.js"></script>
+    
     <!-- Additional header elements -->
     {% include header.html %}
 </head>
-<body class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500">
+<body class="dark:bg-black bg-white h-screen text-black dark:text-white px-5 md:px-20 opacity-0 animate-fade-in transition duration-500" data-exif-config="{{ site.exif }}">
     
     {{ content }}
     
