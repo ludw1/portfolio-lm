@@ -7,19 +7,18 @@ google_analytics: "UA-46465113-2"
 description: "A photography portfolio showcasing beautiful moments captured through my lens."
 
 # UI configs
-title: Max Müller Photography
+title: "L + L Photography"
 subtitle: "See the world through my eyes!"
-author: "Max Müller"
+author: "L + L"
 header:
- title: MAX MÜLLER
+ title: "L + L"
  subtitle: "Photography"
 footer:
- name: MAX MÜLLER
- bio: 929 Sycamore Street San Francisco CA<br />(415) 208- 2116
- copyright: Max Müller
- facebook: https://www.facebook.com
- instagram: https://www.instagram.com
- twitter: https://twitter.com
+ name: "L + L"
+ bio: Bald wieder
+ copyright: "L + L"
+ instagram: https://www.instagram.com/kraemerludwig/
+ #twitter: https://twitter.com
 web_design: "AJ"
 # Configure which exif data to display
 # Tag is the actual exif tag, icon is a fontawesome icon. Use JSON notation without line breaks
