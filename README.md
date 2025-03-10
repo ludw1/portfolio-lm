@@ -3,6 +3,12 @@
 # Photography ![OpenCollective](https://opencollective.com/photography/tiers/backer/badge.svg?label=backer&color=brightgreen)
 A jekyll website for photographers
 
+## Additions of this fork
+1. Combine the designs of [this](https://github.com/JoaoFranco03/photography-portfolio) repo with [this](https://github.com/JoaoFranco03/photography-portfolio) one to create a free portfolio hosted on github pages with a nicer design in my opinion.
+2. Add ability to have subtitles under the images when viewed in gallery mode.
+3. Add google form to the about page.
+
+
 ## Highlights
 1. Easy setup and you get a website of your own for __free__. No web hosting charges too.
 2. To add new pictures, you need to just upload them. __No code__ changes required.
